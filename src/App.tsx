@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
-import { useLocalForage } from './utils';
+import useLocalForage from './hooks/useLocalForage';
 import { appWindow } from '@tauri-apps/api/window';
 
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
