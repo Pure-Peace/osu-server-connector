@@ -6,7 +6,11 @@ WIP
   <img src="/src-tauri/icons/icon.png">
 </p>
 
-### Scripts
+### ⛏️ Build with
+
+*React + Vite + Tauri / TypeScript + Rust*
+
+### 🚀 Scripts
 
 **Dev app**
 
