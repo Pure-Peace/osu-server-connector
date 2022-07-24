@@ -1,0 +1,92 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "package": {
+    "productName": "osu! Server Connector",
+    "version": "0.1.0"
+  },
+  "build": {
+    "distDir": "../build",
+    "devPath": "http://127.0.0.1:3000",
+    "beforeDevCommand": "yarn cross-env BROWSER=none yarn start",
+    "beforeBuildCommand": "yarn build",
+    "withGlobalTauri": true
+  },
+  "tauri": {
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.purepeace.osu-server-connector",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "resources": [],
+      "externalBin": [],
+      "copyright": "Copyright (c) 2022 Pure-Peace",
+      "category": "DeveloperTool",
+      "shortDescription": "osu! Server Connector",
+      "longDescription": "osu! Server Connector",
+      "deb": {
+        "depends": []
+      },
+      "macOS": {
+        "frameworks": [],
+        "minimumSystemVersion": "",
+        "exceptionDomain": "",
+        "signingIdentity": null,
+        "entitlements": null
+      },
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": ""
+      }
+    },
+    "updater": {
+      "active": false
+    },
+    "allowlist": {
+      "all": true,
+      "fs": {
+        "scope": [
+          "$APP/*",
+          "$DOWNLOAD/*"
+        ]
+      }
+    },
+    "windows": [
+      {
+        "title": "osu! Server Connector",
+        "label": "osu-server-onnector",
+        "minWidth": 1010,
+        "minHeight": 610,
+        "resizable": true,
+        "fullscreen": false,
+        "visible": false,
+        "center": true,
+        "decorations": false,
+        "alwaysOnTop": false,
+        "transparent": true
+      },
+      {
+        "title": "Loading - osu! Server Connector",
+        "label": "splashscreen",
+        "width": 310,
+        "height": 360,
+        "decorations": false,
+        "resizable": false,
+        "visible": true,
+        "center": true,
+        "fileDropEnabled": false,
+        "transparent": true,
+        "url": "splashscreen.html"
+      }
+    ],
+    "security": {
+      "csp": "default-src blob: data: filesystem: ws: wss: http: https: tauri: 'unsafe-eval' 'unsafe-inline' 'self' img-src: 'self'"
+    }
+  }
+}
