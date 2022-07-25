@@ -4,19 +4,32 @@
     windows_subsystem = "windows"
 )]
 
+#[macro_use]
+extern crate rust_i18n;
+rust_i18n::i18n!("locales");
+
 pub mod commands;
 pub mod constants;
+pub mod error;
+pub mod logs;
+pub mod utils;
 
 use commands::*;
 
-fn main() {
-    // main window should be invisible to allow either the setup delay or the plugin to show the window
-    tauri::Builder::default()
+fn start_tauri() {
+    if let Err(err) = tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![process_file, close_splashscreen])
         .setup(|app| {
             // let main_window = app.get_window(MAIN_WINDOW_LABLE).unwrap();
             Ok(())
         })
         .run(tauri::generate_context!())
-        .expect("error while running tauri application");
+    {
+        error::handle_tauri_err(err);
+    }
+}
+
+fn main() {
+    utils::init_i18n();
+    start_tauri();
 }

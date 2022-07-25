@@ -1,0 +1,11 @@
+en:
+  none: 'none'
+  error: 'Error'
+  unhandled-error: 'Unhandled Error'
+  details: 'Details'
+  solution: 'Solutions'
+  messages:
+    for-details: 'Please view "%{file_path}" for details.'
+    failed-to-launch: 'O.S.C - Failed to launch app'
+  solutions:
+    download-webview: 'Your system version may be too old, go to "%{url}" download and install webview2.'

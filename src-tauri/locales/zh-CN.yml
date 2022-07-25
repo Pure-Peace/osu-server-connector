@@ -1,0 +1,11 @@
+zh-CN:
+  none: '无'
+  error: '错误'
+  unhandled-error: '未捕获的错误'
+  details: '详细'
+  solution: '解决方案'
+  messages:
+    for-details: '请查看错误日志 "%{file_path}" 以获得详细信息。'
+    failed-to-launch: 'O.S.C - 无法启动'
+  solutions:
+    download-webview: '您的系统版本太老，请到 "%{url}" 下载安装webview2。'

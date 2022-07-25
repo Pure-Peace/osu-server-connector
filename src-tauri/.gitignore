@@ -15,3 +15,7 @@ Cargo.lock
 
 # configs
 /.idea/
+
+
+osc-errors.txt
+osc-logs.txt
