@@ -1,10 +1,27 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React from 'react';
 import styled from 'styled-components';
 
-const ToggleButtonBody = styled.div`
+type PropsToggleButtonBody = {
+  activeIncrease: number;
+  circleRadius: number;
+};
+
+const ToggleButtonBody = styled.div<PropsToggleButtonBody>`
   position: relative;
+  user-select: none;
+  overflow: hidden;
+
   cursor: pointer;
+
+  :active .circle-on {
+    margin-left: -${(props) => props.activeIncrease}px;
+    width: ${(props) => props.circleRadius + props.activeIncrease}px !important;
+  }
+
+  :active .circle-off {
+    width: ${(props) => props.circleRadius + props.activeIncrease}px !important;
+  }
 `;
 
 const ToggleButtonCircle = styled.div`
@@ -19,25 +36,26 @@ const ToggleButtonCircle = styled.div`
 
 const ToggleButtonContent = styled.span`
   transition: all 0.2s ease;
-  user-select: none;
   position: absolute;
   top: 0;
   z-index: 9;
   top: 50%;
   transform: translateY(-50%);
+  overflow: hidden;
 `;
 
 type ToggleButtonTheme = {
-  bodyColorOn?: string;
-  bodyColorOff?: string;
-  circleColorOn?: string;
-  circleColorOff?: string;
-  borderRadius?: string;
-  minWidth?: string;
-  minHeight?: string;
-  fontSize?: string;
-  borderSize?: string;
-  contentColor?: string;
+  bodyColorOn: string;
+  bodyColorOff: string;
+  circleColorOn: string;
+  circleColorOff: string;
+  contentColor: string;
+  borderRadius: number;
+  minWidth: number;
+  minHeight: number;
+  fontSize: number;
+  borderSize: number;
+  activeIncrease: number;
 };
 
 const DEFAULT_THEME: ToggleButtonTheme = {
@@ -45,55 +63,58 @@ const DEFAULT_THEME: ToggleButtonTheme = {
   bodyColorOff: 'rgba(var(--color-primary), 1)',
   circleColorOn: 'var(--frame-bg-color)',
   circleColorOff: 'var(--frame-bg-color)',
-  borderRadius: '30px',
-  minWidth: '80px',
-  minHeight: '35px',
-  fontSize: '16px',
-  borderSize: '5px',
   contentColor: '#fff',
+  borderRadius: 30,
+  minWidth: 80,
+  minHeight: 35,
+  fontSize: 16,
+  borderSize: 5,
+  activeIncrease: 5,
 };
 
 const ToggleButton = (
   props: {
     state: boolean;
-    toggle: (...args: any) => any;
-    theme?: ToggleButtonTheme;
+    toggle: (...args: unknown[]) => unknown;
+    theme?: Record<keyof ToggleButtonTheme, string | number | undefined>;
   } & React.PropsWithChildren
 ) => {
+  const px = (val: string | number) => `${val}px`;
   const s = (on?: string, off?: string) => (props.state ? on : off);
   const t = Object.assign(props.theme || {}, DEFAULT_THEME);
 
-  const circleRadius =
-    parseFloat(t.minHeight as string) - parseFloat(t.borderSize as string) * 2;
+  const circleRadius = t.minHeight - t.borderSize * 2;
   return (
     <ToggleButtonBody
+      circleRadius={circleRadius}
+      activeIncrease={t.activeIncrease}
       style={{
         backgroundColor: s(t.bodyColorOn, t.bodyColorOff),
         color: s(t.bodyColorOn, t.bodyColorOff),
-        borderRadius: t.borderRadius,
-        minWidth: t.minWidth,
-        minHeight: t.minHeight,
+        borderRadius: px(t.borderRadius),
+        minWidth: px(t.minWidth),
+        minHeight: px(t.minHeight),
       }}
       onClick={() => props.toggle(!props.state)}
     >
       <ToggleButtonCircle
-        className="circle"
+        className={s('circle-on', 'circle-off')}
         style={{
-          width: `${circleRadius}px`,
-          height: `${circleRadius}px`,
+          width: px(circleRadius),
+          height: px(circleRadius),
           backgroundColor: s(t.circleColorOn, t.circleColorOff),
           left: s(
-            `calc(100% - ${circleRadius}px - ${t.borderSize})`,
-            t.borderSize
+            `calc(100% - ${px(circleRadius + t.borderSize)})`,
+            px(t.borderSize)
           ),
         }}
       />
       <ToggleButtonContent
         style={{
-          left: s(`calc(${t.borderSize} * 2)`, `calc(100% - 45px)`),
-          lineHeight: `${circleRadius}px`,
-          height: `${circleRadius}px`,
-          width: `calc(100% - (${t.borderSize} * 4) - ${circleRadius}px)`,
+          left: s(px(t.borderSize * 2), `calc(100% - 45px)`),
+          lineHeight: px(circleRadius),
+          height: px(circleRadius),
+          width: `calc(100% - ${px(t.borderSize * 4 + circleRadius)})`,
           fontSize: t.fontSize,
           color: t.contentColor,
         }}
