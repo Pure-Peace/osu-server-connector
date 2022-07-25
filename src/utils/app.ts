@@ -32,7 +32,6 @@ export const autoComputeWindowRadius = () => {
         });
       } else {
         Object.entries(initialProperties).forEach(([p, v]) => {
-          console.log(v);
           document.documentElement.style.setProperty(p, v);
         });
       }

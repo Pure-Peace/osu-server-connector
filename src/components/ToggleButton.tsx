@@ -2,12 +2,42 @@
 import React from 'react';
 import styled from 'styled-components';
 
-type PropsToggleButtonBody = {
+export type PropsToggleButtonBody = {
   activeIncrease: number;
   circleRadius: number;
 };
 
-const ToggleButtonBody = styled.div<PropsToggleButtonBody>`
+export type ToggleButtonTheme = {
+  bodyColorOn: string;
+  bodyColorOff: string;
+  circleColorOn: string;
+  circleColorOff: string;
+  contentColorOn: string;
+  contentColorOff: string;
+  borderRadius: number;
+  minWidth: number;
+  minHeight: number;
+  fontSize: number;
+  borderSize: number;
+  activeIncrease: number;
+};
+
+export const DEFAULT_THEME: ToggleButtonTheme = {
+  bodyColorOn: 'rgba(var(--color-primary), 1)',
+  bodyColorOff: 'rgba(var(--color-primary), 1)',
+  circleColorOn: 'var(--frame-bg-color)',
+  circleColorOff: 'var(--frame-bg-color)',
+  contentColorOn: '#fff',
+  contentColorOff: '#fff',
+  borderRadius: 30,
+  minWidth: 80,
+  minHeight: 35,
+  fontSize: 16,
+  borderSize: 5,
+  activeIncrease: 5,
+};
+
+export const ToggleButtonBody = styled.div<PropsToggleButtonBody>`
   position: relative;
   user-select: none;
   overflow: hidden;
@@ -24,7 +54,7 @@ const ToggleButtonBody = styled.div<PropsToggleButtonBody>`
   }
 `;
 
-const ToggleButtonCircle = styled.div`
+export const ToggleButtonCircle = styled.div`
   transition: all 0.2s ease;
   border-radius: 100%;
   position: absolute;
@@ -34,7 +64,7 @@ const ToggleButtonCircle = styled.div`
   box-shadow: 0 5px 15px 0 rgb(0, 0, 0, 0.15);
 `;
 
-const ToggleButtonContent = styled.div`
+export const ToggleButtonContent = styled.div`
   transition: all 0.2s ease;
   position: absolute;
   top: 0;
@@ -46,37 +76,7 @@ const ToggleButtonContent = styled.div`
   align-items: center;
 `;
 
-type ToggleButtonTheme = {
-  bodyColorOn: string;
-  bodyColorOff: string;
-  circleColorOn: string;
-  circleColorOff: string;
-  contentColorOn: string;
-  contentColorOff: string;
-  borderRadius: number;
-  minWidth: number;
-  minHeight: number;
-  fontSize: number;
-  borderSize: number;
-  activeIncrease: number;
-};
-
-const DEFAULT_THEME: ToggleButtonTheme = {
-  bodyColorOn: 'rgba(var(--color-primary), 1)',
-  bodyColorOff: 'rgba(var(--color-primary), 1)',
-  circleColorOn: 'var(--frame-bg-color)',
-  circleColorOff: 'var(--frame-bg-color)',
-  contentColorOn: '#fff',
-  contentColorOff: '#fff',
-  borderRadius: 30,
-  minWidth: 80,
-  minHeight: 35,
-  fontSize: 16,
-  borderSize: 5,
-  activeIncrease: 5,
-};
-
-const ToggleButton = (
+export const ToggleButton = (
   props: {
     state: boolean;
     toggle: (...args: unknown[]) => unknown;
