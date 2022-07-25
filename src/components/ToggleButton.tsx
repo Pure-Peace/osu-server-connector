@@ -34,7 +34,7 @@ const ToggleButtonCircle = styled.div`
   box-shadow: 0 5px 15px 0 rgb(0, 0, 0, 0.15);
 `;
 
-const ToggleButtonContent = styled.span`
+const ToggleButtonContent = styled.div`
   transition: all 0.2s ease;
   position: absolute;
   top: 0;
@@ -42,6 +42,8 @@ const ToggleButtonContent = styled.span`
   top: 50%;
   transform: translateY(-50%);
   overflow: hidden;
+  display: flex;
+  align-items: center;
 `;
 
 type ToggleButtonTheme = {
@@ -49,7 +51,8 @@ type ToggleButtonTheme = {
   bodyColorOff: string;
   circleColorOn: string;
   circleColorOff: string;
-  contentColor: string;
+  contentColorOn: string;
+  contentColorOff: string;
   borderRadius: number;
   minWidth: number;
   minHeight: number;
@@ -63,7 +66,8 @@ const DEFAULT_THEME: ToggleButtonTheme = {
   bodyColorOff: 'rgba(var(--color-primary), 1)',
   circleColorOn: 'var(--frame-bg-color)',
   circleColorOff: 'var(--frame-bg-color)',
-  contentColor: '#fff',
+  contentColorOn: '#fff',
+  contentColorOff: '#fff',
   borderRadius: 30,
   minWidth: 80,
   minHeight: 35,
@@ -76,14 +80,17 @@ const ToggleButton = (
   props: {
     state: boolean;
     toggle: (...args: unknown[]) => unknown;
-    theme?: Record<keyof ToggleButtonTheme, string | number | undefined>;
+    theme?: {
+      [Property in keyof ToggleButtonTheme]?: string | number | undefined;
+    };
   } & React.PropsWithChildren
 ) => {
   const px = (val: string | number) => `${val}px`;
   const s = (on?: string, off?: string) => (props.state ? on : off);
-  const t = Object.assign(props.theme || {}, DEFAULT_THEME);
 
+  const t = Object.assign({ ...DEFAULT_THEME }, props.theme);
   const circleRadius = t.minHeight - t.borderSize * 2;
+
   return (
     <ToggleButtonBody
       circleRadius={circleRadius}
@@ -111,12 +118,11 @@ const ToggleButton = (
       />
       <ToggleButtonContent
         style={{
-          left: s(px(t.borderSize * 2), `calc(100% - 45px)`),
-          lineHeight: px(circleRadius),
+          left: s(px(t.borderSize * 2), px(t.borderSize * 3 + circleRadius)),
           height: px(circleRadius),
           width: `calc(100% - ${px(t.borderSize * 4 + circleRadius)})`,
           fontSize: t.fontSize,
-          color: t.contentColor,
+          color: s(t.contentColorOn, t.contentColorOff),
         }}
       >
         {props.children}

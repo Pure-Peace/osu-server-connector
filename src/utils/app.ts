@@ -53,3 +53,21 @@ export const preventContextMenu = () => {
     (e) => !import.meta.env.DEV && e.preventDefault()
   );
 };
+
+export const tryGetDarkModeFromLocalStorage = () => {
+  try {
+    const item = localStorage.getItem('usehooks-ts-dark-mode');
+    if (!item) return false;
+    return JSON.parse(item) as boolean;
+  } catch (_) {
+    return false;
+  }
+};
+
+export const initDarkMode = () => {
+  const isDarkMode = tryGetDarkModeFromLocalStorage();
+  document.documentElement.setAttribute(
+    'data-theme',
+    isDarkMode ? 'dark' : 'light'
+  );
+};

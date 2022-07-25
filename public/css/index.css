@@ -1,6 +1,6 @@
 :root {
   --frame-top-height: 70px;
-  --frame-bottom-height: 70px;
+  --frame-bottom-height: 55px;
 
   --shadow-size: 5px;
   --border-radius-size: 22px;
@@ -124,6 +124,9 @@ html {
     'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif' !important;
 }
 
+div {
+  transition: background-color .2s ease;
+}
 
 body {
   overflow: hidden;
@@ -237,6 +240,18 @@ img {
   align-items: center;
   flex: 1;
   background-color: var(--frame-bg-color);
+}
+
+#frame-bottom-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+#frame-bottom-right {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
 }
 
 #app-content {

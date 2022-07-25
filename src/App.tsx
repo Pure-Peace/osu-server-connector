@@ -6,14 +6,22 @@ import { appWindow } from '@tauri-apps/api/window';
 
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
 
-import DarkMode from './components/DarkMode';
+import ToggleDarkMode from './components/ToggleDarkMode';
 import ExampleView from './views/ExampleView';
 
 import WindowMinimize from './components/icons/WindowMinimize';
 import WindowMaximize from './components/icons/WindowMaximize';
 import WindowClose from './components/icons/WindowClose';
+import styled from 'styled-components';
 
 const APP_TITLE = `O.S.C - osu! Server Connector`;
+
+const AppFragment = styled.div`
+  background-color: var(--frame-bg-color);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+`;
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -125,13 +133,16 @@ function App() {
     const [state, toggle] = useState(true);
     return (
       <div id="frame-bottom">
-        <DarkMode />
+        <div id="frame-bottom-left"></div>
+        <div id="frame-bottom-right">
+          <ToggleDarkMode />
+        </div>
       </div>
     );
   };
 
   return (
-    <>
+    <AppFragment>
       <AppFrameTop>
         <WindowTitleAera />
         <WindowControlButtonAera />
@@ -141,7 +152,7 @@ function App() {
         <AppContent />
       </AppFrameMiddle>
       <AppFrameBottom />
-    </>
+    </AppFragment>
   );
 }
 

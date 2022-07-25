@@ -9,11 +9,13 @@ import {
   autoCloseSplashScreen,
   autoComputeWindowRadius,
   preventContextMenu,
+  initDarkMode,
 } from './utils/app';
 
 autoCloseSplashScreen();
 autoComputeWindowRadius();
 preventContextMenu();
+initDarkMode();
 
 const container = document.getElementById('app') as HTMLElement;
 
