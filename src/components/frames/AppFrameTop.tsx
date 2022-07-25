@@ -6,6 +6,14 @@ import { MinimizeButton, MaximizeButton, CloseButton } from '../ControlButtons';
 export const AppTitleAeraFragment = styled.div`
   display: flex;
   flex: 1;
+  align-items: center;
+  height: 100%;
+`;
+
+export const AppLogo = styled.img`
+  height: 48px;
+  width: 48px;
+  cursor: pointer;
 `;
 
 export const AppControlButtonAeraFragment = styled.div``;
@@ -23,11 +31,13 @@ export const AppFrameTopFragment = styled.div`
   background-color: var(--frame-bg-color);
   align-items: center;
   display: flex;
+  overflow: hidden;
 `;
 
 export const AppTitleAera = () => {
   return (
     <AppTitleAeraFragment data-tauri-drag-region>
+      <AppLogo data-tauri-drag-region src="images/logo192.png" />
       <AppTitle data-tauri-drag-region>{APP_TITLE}</AppTitle>
     </AppTitleAeraFragment>
   );

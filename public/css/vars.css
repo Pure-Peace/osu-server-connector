@@ -1,0 +1,103 @@
+:root {
+  --frame-top-height: 70px;
+  --frame-bottom-height: 55px;
+
+  --shadow-size: 5px;
+  --border-radius-size: 22px;
+  --border-size: 1px;
+
+  --color-primary: 25, 91, 255;
+  /* rgb(25, 91, 255) */
+  --color-warn: 255, 186, 0;
+  /* rgb(255, 186, 0) */
+  --color-danger: 255, 71, 87;
+  /* rgb(255, 71, 87) */
+  --color-success: 70, 201, 58;
+  /* rgb(70, 201, 58) */
+  --color-dark: 30, 30, 30;
+  /* rgb(30, 30, 30) */
+  --color-light: 244, 247, 248;
+  /* rgb(244, 247, 248) */
+  --color-color: 17, 18, 20;
+  /* rgb(17, 18, 20) */
+  --color-facebook: 59, 89, 153;
+  /* rgb(59, 89, 153) */
+  --color-twitter: 29, 161, 242;
+  /* rgb(29, 161, 242) */
+  --color-youtube: 255, 0, 0;
+  /* rgb(255, 0, 0) */
+  --color-pinterest: 189, 8, 28;
+  /* rgb(189, 8, 28) */
+  --color-linkedin: 0, 119, 181;
+  /* rgb(0, 119, 181) */
+  --color-snapchat: 255, 252, 0;
+  /* rgb(255, 252, 0) */
+  --color-whatsapp: 37, 211, 102;
+  /* rgb(37, 211, 102) */
+  --color-tumblr: 54, 70, 93;
+  /* rgb(54, 70, 93) */
+  --color-reddit: 255, 69, 0;
+  /* rgb(255, 69, 0) */
+  --color-spotify: 30, 215, 96;
+  /* rgb(30, 215, 96) */
+  --color-amazon: 255, 153, 0;
+  /* rgb(255, 153, 0) */
+  --color-medium: 2, 184, 117;
+  /* rgb(2, 184, 117) */
+  --color-vimeo: 26, 183, 234;
+  /* rgb(26, 183, 234) */
+  --color-skype: 0, 175, 240;
+  /* rgb(0, 175, 240) */
+  --color-dribbble: 234, 76, 137;
+  /* rgb(234, 76, 137) */
+  --color-slack: 74, 21, 75;
+  /* rgb(74, 21, 75) */
+  --color-yahoo: 67, 2, 151;
+  /* rgb(67, 2, 151) */
+  --color-twitch: 100, 65, 164;
+  /* rgb(100, 65, 164) */
+  --color-discord: 114, 137, 218;
+  /* rgb(114, 137, 218) */
+  --color-telegram: 0, 136, 204;
+  /* rgb(0, 136, 204) */
+  --color-google-plus: 219, 68, 55;
+  /* rgb(219, 68, 55) */
+  --color-messenger: 0, 132, 255;
+  /* rgb(0, 132, 255) */
+  --color-background: 255, 255, 255;
+  /* rgb(255, 255, 255) */
+  --color-text: 44, 62, 80;
+  /* rgb(44, 62, 80) */
+  --color-gray-1: 249, 252, 253;
+  /* rgb(249, 252, 253) */
+  --color-gray-2: 244, 247, 248;
+  /* rgb(244, 247, 248) */
+  --color-gray-3: 240, 243, 244;
+  /* rgb(240, 243, 244) */
+  --color-gray-4: 230, 233, 234;
+  /* rgb(230, 233, 234) */
+
+  --text-color: #000000;
+  --frame-bg-color: #ffffff;
+  --frame-bg-color-hover: #eeeeee;
+  --frame-bg-color-active: #d8d8d8;
+  --content-bg-color: #f4f7f8;
+}
+
+:root {
+  --vs-primary: 26, 92, 255;
+  --vs-theme-bg: rgb(244, 247, 248);
+  --vs-theme-color: #2c3e50;
+  --vs-theme-layout: #fff;
+  --vs-theme-bg2: #eef2f5;
+  --vs-theme-code: #3f3d56;
+  --vs-theme-code2: #363449;
+}
+
+[data-theme='dark'] {
+  --text-color: #ffffff;
+  --frame-bg-color: #1e2023;
+  --frame-bg-color-hover: #33363b;
+  --frame-bg-color-active: #51575f;
+  --content-bg-color: #18191c;
+}
