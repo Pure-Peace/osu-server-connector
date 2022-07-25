@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDarkMode } from 'usehooks-ts';
-import CustomButton from './CustomButton';
+import ToggleButton from './ToggleButton';
 
 export default () => {
   const { isDarkMode, toggle } = useDarkMode();
@@ -13,8 +13,8 @@ export default () => {
   }, [isDarkMode]);
 
   return (
-    <CustomButton onClick={toggle}>
-      {isDarkMode ? 'dark' : 'light'}
-    </CustomButton>
+    <ToggleButton state={isDarkMode} toggle={toggle}>
+      {isDarkMode ? 'Dark' : 'Light'}
+    </ToggleButton>
   );
 };

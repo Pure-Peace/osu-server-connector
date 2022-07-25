@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import useLocalForage from './hooks/useLocalForage';
@@ -122,6 +122,7 @@ function App() {
   };
 
   const AppFrameBottom = () => {
+    const [state, toggle] = useState(true);
     return (
       <div id="frame-bottom">
         <DarkMode />

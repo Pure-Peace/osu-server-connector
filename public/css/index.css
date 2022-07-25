@@ -1,6 +1,6 @@
 :root {
-  --frame-top-height: 80px;
-  --frame-bottom-height: 80px;
+  --frame-top-height: 70px;
+  --frame-bottom-height: 70px;
 
   --shadow-size: 5px;
   --border-radius-size: 22px;
@@ -124,6 +124,7 @@ html {
     'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif' !important;
 }
 
+
 body {
   overflow: hidden;
   box-shadow: 0 0 var(--shadow-size) #00000031;
@@ -227,12 +228,13 @@ img {
 
 #frame-left {
   background-color: var(--frame-bg-color);
-  min-width: 80px;
+  min-width: calc(var(--frame-top-height) * 2);
 }
 
 #frame-bottom {
   height: var(--frame-bottom-height);
   display: flex;
+  align-items: center;
   flex: 1;
   background-color: var(--frame-bg-color);
 }
