@@ -16,6 +16,8 @@ pub fn handle_tauri_err(err: tauri::Error) {
                     )),
                     true,
                 );
+
+                let _ = open::that(constants::ERR_FILE);
                 return;
             }
             _ => (),
