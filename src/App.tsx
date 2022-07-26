@@ -9,6 +9,7 @@ import AppFrameTop from './components/app/AppFrameTop';
 
 // Hooks
 import useLocalForage from './hooks/useLocalForage';
+import { BrowserRouter } from 'react-router-dom';
 
 const AppFragment = styled.div`
   background-color: var(--frame-bg-color);
@@ -26,11 +27,13 @@ function App() {
   }, [lang]);
 
   return (
-    <AppFragment>
-      <AppFrameTop />
-      <AppFrameMiddle />
-      <AppFrameBottom />
-    </AppFragment>
+    <BrowserRouter>
+      <AppFragment>
+        <AppFrameTop />
+        <AppFrameMiddle />
+        <AppFrameBottom />
+      </AppFragment>
+    </BrowserRouter>
   );
 }
 
