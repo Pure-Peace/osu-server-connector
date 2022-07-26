@@ -1,4 +1,4 @@
-en:
+rust:
   none: 'none'
   error: 'Error'
   unhandled-error: 'Unhandled Error'

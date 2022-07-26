@@ -1,4 +1,4 @@
-zh-CN:
+rust:
   none: '无'
   error: '错误'
   unhandled-error: '未捕获的错误'

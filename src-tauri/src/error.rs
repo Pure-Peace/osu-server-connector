@@ -8,10 +8,10 @@ pub fn handle_tauri_err(err: tauri::Error) {
                 let _ = open::that(constants::WEBVIEW_DOWNLOAD_URL);
 
                 throw_error(
-                    &t!("messages.failed-to-launch"),
+                    &t!("rust.messages.failed-to-launch"),
                     &err_str,
                     Some(&t!(
-                        "solutions.download-webview",
+                        "rust.solutions.download-webview",
                         url = constants::WEBVIEW_DOWNLOAD_URL
                     )),
                     true,
@@ -25,7 +25,7 @@ pub fn handle_tauri_err(err: tauri::Error) {
         _ => (),
     };
     // Unhandled err
-    throw_error(&t!("unhandled-error"), &err_str, None, false);
+    throw_error(&t!("rust.unhandled-error"), &err_str, None, false);
 }
 
 pub fn throw_error(title: &str, err_str: &str, solution: Option<&str>, is_handled: bool) {
@@ -42,14 +42,14 @@ pub fn create_err_content(
     format!(
         "[{err_type}]\n{title}\n{time}\n\n[{details}]\n{err}\n\n[{solution_key}]\n{solution_content}\n\n",
         err_type = if is_handled {
-            t!("error")
+            t!("rust.error")
         } else {
-            t!("unhandled-error")
+            t!("rust.unhandled-error")
         },
         time = chrono::Local::now(),
-        details = t!("details"),
-        solution_key = t!("solution"),
-        solution_content = solution.unwrap_or(&t!("none"))
+        details = t!("rust.details"),
+        solution_key = t!("rust.solution"),
+        solution_content = solution.unwrap_or(&t!("rust.none"))
     )
 }
 
@@ -57,7 +57,7 @@ pub fn for_details(content: &str) -> String {
     format!(
         "{} \n\n{}",
         content,
-        t!("messages.for-details", file_path = constants::ERR_FILE)
+        t!("rust.messages.for-details", file_path = constants::ERR_FILE)
     )
 }
 

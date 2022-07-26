@@ -6,7 +6,7 @@
 
 #[macro_use]
 extern crate rust_i18n;
-rust_i18n::i18n!("locales");
+rust_i18n::i18n!("../locales");
 
 pub mod commands;
 pub mod constants;
