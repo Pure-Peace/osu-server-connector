@@ -36,16 +36,21 @@ export const AppFrameTopFragment = styled.div`
 
 export const AppTitleAera = () => {
   return (
-    <AppTitleAeraFragment data-tauri-drag-region>
-      <AppLogo data-tauri-drag-region src="images/logo192.png" />
-      <AppTitle data-tauri-drag-region>{APP_TITLE}</AppTitle>
+    <AppTitleAeraFragment id="app-title-aera" data-tauri-drag-region>
+      <AppLogo id="app-logo" data-tauri-drag-region src="images/logo192.png" />
+      <AppTitle id="app-title" data-tauri-drag-region>
+        {APP_TITLE}
+      </AppTitle>
     </AppTitleAeraFragment>
   );
 };
 
 export const AppControlButtonAera = () => {
   return (
-    <AppControlButtonAeraFragment data-tauri-drag-region>
+    <AppControlButtonAeraFragment
+      id="app-control-btn-group"
+      data-tauri-drag-region
+    >
       <MinimizeButton />
       <MaximizeButton />
       <CloseButton />
@@ -55,7 +60,7 @@ export const AppControlButtonAera = () => {
 
 export const AppFrameTop = () => {
   return (
-    <AppFrameTopFragment data-tauri-drag-region>
+    <AppFrameTopFragment id="app-frame-top" data-tauri-drag-region>
       <AppTitleAera />
       <AppControlButtonAera />
     </AppFrameTopFragment>

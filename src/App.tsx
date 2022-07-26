@@ -3,15 +3,12 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 // Components
-import AppFrameMiddle from './components/frames/AppFrameMiddle';
-import AppFrameBottom from './components/frames/AppFrameBottom';
-import AppFrameTop from './components/frames/AppFrameTop';
+import AppFrameMiddle from './components/app/AppFrameMiddle';
+import AppFrameBottom from './components/app/AppFrameBottom';
+import AppFrameTop from './components/app/AppFrameTop';
 
 // Hooks
 import useLocalForage from './hooks/useLocalForage';
-
-// Views
-import ExampleView from './views/ExampleView';
 
 const AppFragment = styled.div`
   background-color: var(--frame-bg-color);
@@ -22,10 +19,6 @@ const AppFragment = styled.div`
 
 function App() {
   const { t, i18n } = useTranslation();
-
-  const views = [
-    { component: ExampleView, path: '/example-view', name: t('ExampleView') },
-  ];
 
   const [lang, setLang] = useLocalForage('lang', i18n.resolvedLanguage);
   useEffect(() => {

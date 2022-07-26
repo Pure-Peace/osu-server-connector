@@ -1,5 +1,6 @@
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
 import styled from 'styled-components';
+import AppRouter from './AppRouter';
 
 export const AppContentFragment = styled.div`
   flex: 1;
@@ -14,12 +15,14 @@ export const AppContentContainer = styled.div``;
 
 export const AppContent = () => {
   return (
-    <AppContentFragment>
+    <AppContentFragment id="app-content">
       <OverlayScrollbarsComponent
         options={{ scrollbars: { autoHide: 'leave' } }}
         className="flexbox"
       >
-        <AppContentContainer className="flexbox"></AppContentContainer>
+        <AppContentContainer className="flexbox">
+          <AppRouter />
+        </AppContentContainer>
       </OverlayScrollbarsComponent>
     </AppContentFragment>
   );

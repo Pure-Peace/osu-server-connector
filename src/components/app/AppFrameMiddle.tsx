@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import AppContent from './AppContent';
-import AppFrameLeft from './AppFrameLeft';
+import AppFrameSidebar from './AppFrameSidebar';
 
 export const AppFrameMiddleFragment = styled.div`
   display: flex;
@@ -10,8 +10,8 @@ export const AppFrameMiddleFragment = styled.div`
 
 export const AppFrameMiddle = () => {
   return (
-    <AppFrameMiddleFragment>
-      <AppFrameLeft />
+    <AppFrameMiddleFragment id="app-frame-middle">
+      <AppFrameSidebar />
       <AppContent />
     </AppFrameMiddleFragment>
   );

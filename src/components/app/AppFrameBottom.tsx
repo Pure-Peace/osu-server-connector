@@ -24,7 +24,7 @@ export const AppFrameBottomRight = styled.div`
 
 export const AppFrameBottom = () => {
   return (
-    <AppFrameBottomFragment>
+    <AppFrameBottomFragment id="app-frame-bottom">
       <AppFrameBottomLeft></AppFrameBottomLeft>
       <AppFrameBottomRight>
         <ToggleDarkMode />
