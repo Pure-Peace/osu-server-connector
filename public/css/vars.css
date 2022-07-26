@@ -1,6 +1,7 @@
 :root {
   --frame-top-height: 70px;
   --frame-bottom-height: 55px;
+  --frame-sidebar-width: 180px;
 
   --shadow-size: 5px;
   --border-radius-size: 22px;
