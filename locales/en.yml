@@ -9,3 +9,4 @@ rust:
     failed-to-launch: 'O.S.C - Failed to launch app'
   solutions:
     download-webview: 'Your system version may be too old, go to "%{url}" download and install webview2.'
+hh: 'asd'

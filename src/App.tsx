@@ -10,6 +10,8 @@ import AppFrameTop from './components/app/AppFrameTop';
 // Hooks
 import useLocalForage from './hooks/useLocalForage';
 import { BrowserRouter } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
+import { t } from 'i18next';
 
 const AppFragment = styled.div`
   background-color: var(--frame-bg-color);
@@ -19,21 +21,18 @@ const AppFragment = styled.div`
 `;
 
 function App() {
-  const { t, i18n } = useTranslation();
-
-  const [lang, setLang] = useLocalForage('lang', i18n.resolvedLanguage);
-  useEffect(() => {
-    i18n.changeLanguage(lang);
-  }, [lang]);
+  console.log(t('hh'));
 
   return (
-    <BrowserRouter>
-      <AppFragment>
-        <AppFrameTop />
-        <AppFrameMiddle />
-        <AppFrameBottom />
-      </AppFragment>
-    </BrowserRouter>
+    <RecoilRoot>
+      <BrowserRouter>
+        <AppFragment>
+          <AppFrameTop />
+          <AppFrameMiddle />
+          <AppFrameBottom />
+        </AppFragment>
+      </BrowserRouter>
+    </RecoilRoot>
   );
 }
 
