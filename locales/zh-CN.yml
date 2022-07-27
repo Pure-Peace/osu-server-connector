@@ -9,3 +9,6 @@ rust:
     failed-to-launch: 'O.S.C - 无法启动'
   solutions:
     download-webview: '您的系统版本太老，请到 "%{url}" 下载安装webview2。'
+en: '英语'
+zh-CN: '简体中文'
+Hello: '你好'

@@ -1,17 +1,12 @@
-import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
+import { BrowserRouter } from 'react-router-dom';
 
 // Components
 import AppFrameMiddle from './components/app/AppFrameMiddle';
 import AppFrameBottom from './components/app/AppFrameBottom';
 import AppFrameTop from './components/app/AppFrameTop';
 
-// Hooks
-import useLocalForage from './hooks/useLocalForage';
-import { BrowserRouter } from 'react-router-dom';
-import { RecoilRoot } from 'recoil';
-import { t } from 'i18next';
+import AppProvider from './providers/AppProvider';
 
 const AppFragment = styled.div`
   background-color: var(--frame-bg-color);
@@ -21,10 +16,8 @@ const AppFragment = styled.div`
 `;
 
 function App() {
-  console.log(t('hh'));
-
   return (
-    <RecoilRoot>
+    <AppProvider>
       <BrowserRouter>
         <AppFragment>
           <AppFrameTop />
@@ -32,7 +25,7 @@ function App() {
           <AppFrameBottom />
         </AppFragment>
       </BrowserRouter>
-    </RecoilRoot>
+    </AppProvider>
   );
 }
 

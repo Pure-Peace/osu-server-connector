@@ -1,7 +1,11 @@
 import styled from 'styled-components';
-import useI18n from '../hooks/useI18n';
-import { cc } from '../utils/common';
+import { useContext } from 'react';
+
 import Language from './icons/Language';
+
+import { cc } from '../utils/common';
+import { supportedLanguages } from '../i18n';
+import { AppContext } from '../contexts/appContext';
 
 export const LanguageSwitcherFragment = styled.div`
   position: relative;
@@ -51,7 +55,7 @@ export const LanguageSwitcherMenu = styled.div`
 export const LanguageSwitcherMenuItem = styled.div`
   position: relative;
   padding: 7px 15px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   white-space: nowrap;
   transition: all 0.2s ease;
@@ -63,13 +67,15 @@ export const LanguageSwitcherMenuItem = styled.div`
 `;
 
 export const LanguageSwitcher = () => {
-  const { lang, setLang, i18n } = useI18n();
+  const {
+    i18n: { lang, setLang, t },
+  } = useContext(AppContext);
 
   return (
     <LanguageSwitcherFragment>
       <Language />
       <LanguageSwitcherMenu>
-        {i18n.languages.map((locale, index) => (
+        {supportedLanguages.map((locale, index) => (
           <LanguageSwitcherMenuItem
             key={index}
             className={cc({ 'menu-item-active': locale === lang })}
@@ -77,7 +83,7 @@ export const LanguageSwitcher = () => {
               setLang(locale);
             }}
           >
-            {locale}
+            {t(locale)}
           </LanguageSwitcherMenuItem>
         ))}
       </LanguageSwitcherMenu>
