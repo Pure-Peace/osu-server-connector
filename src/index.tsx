@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import 'overlayscrollbars/css/OverlayScrollbars.css';
 
 import App from './App';
-import './utils/i18n';
+import './i18n';
 import {
   autoCloseSplashScreen,
   autoComputeWindowRadius,

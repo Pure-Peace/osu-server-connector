@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import routes from '../../routes';
 import { cc } from '../../utils/common';
-import { SidebarMenu, SidebarMenuItem } from '../Sidebar';
+import { SidebarMenu, SidebarMenuItem } from '../SidebarMenu';
 
 export const AppFrameSidebarFragment = styled.div`
   background-color: var(--frame-bg-color);

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Github from '../icons/Github';
 import LanguageSwitcher from '../LanguageSwitcher';
 
-import ToggleDarkMode from '../ToggleDarkMode';
+import ToggleDarkMode from '../DarkModeSwitcher';
 
 export const AppFrameBottomFragment = styled.div`
   height: var(--frame-bottom-height);
