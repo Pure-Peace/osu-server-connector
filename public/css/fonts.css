@@ -1,4 +1,9 @@
 @font-face {
   font-family: Poppins;
-  src: url(/fonts/Poppins-Regular.ttf)
+  src: url(/fonts/Poppins-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'SourceHanSansCN-Regular';
+  src: url(/fonts/SourceHanSansCN-Regular.ttf) format('truetype');
 }

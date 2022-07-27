@@ -11,7 +11,8 @@ html {
 * {
   font-family: 'Poppins', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI',
     'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', 'sans-serif' !important;
+    'Helvetica Neue', 'sans-serif', 'SourceHanSansCN-Regular', 'Microsoft YaHei',
+    '微软雅黑' !important;
 }
 
 div {
