@@ -25,9 +25,9 @@ export default () => {
       }}
     >
       {isDarkMode ? (
-        <Moon style={{ fontSize: '18px', color: '#FFFFAB' }} />
+        <Sun style={{ fontSize: '18px', color: '#FFFFAB' }} />
       ) : (
-        <Sun style={{ fontSize: '18px' }} />
+        <Moon style={{ fontSize: '18px', color: 'rgba(0,0,0,.7)' }} />
       )}
     </ToggleButton>
   );

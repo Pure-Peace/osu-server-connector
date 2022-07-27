@@ -34,14 +34,14 @@ export const DEFAULT_THEME: ToggleButtonTheme = {
   minHeight: 35,
   fontSize: 16,
   borderSize: 5,
-  activeIncrease: 5,
+  activeIncrease: 4,
 };
 
 export const ToggleButtonBody = styled.div<PropsToggleButtonBody>`
   position: relative;
   user-select: none;
   overflow: hidden;
-
+  z-index: 8;
   cursor: pointer;
 
   :active .circle-on {
