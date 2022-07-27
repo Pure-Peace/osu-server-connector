@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import Github from '../icons/Github';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 import ToggleDarkMode from '../ToggleDarkMode';
 
@@ -8,6 +10,7 @@ export const AppFrameBottomFragment = styled.div`
   align-items: center;
   flex: 1;
   background-color: var(--frame-bg-color);
+  padding: 0 20px;
 `;
 
 export const AppFrameBottomLeft = styled.div`
@@ -19,14 +22,28 @@ export const AppFrameBottomLeft = styled.div`
 export const AppFrameBottomRight = styled.div`
   display: flex;
   align-items: center;
-  padding: 0 20px;
+  height: 100%;
+
+  > div {
+    margin: 0 5px;
+  }
+`;
+
+export const AppBottomCopyright = styled.div`
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 14px;
 `;
 
 export const AppFrameBottom = () => {
   return (
     <AppFrameBottomFragment id="app-frame-bottom">
-      <AppFrameBottomLeft></AppFrameBottomLeft>
+      <AppFrameBottomLeft>
+        <AppBottomCopyright>Copyright 2022 Pure-Peace</AppBottomCopyright>
+      </AppFrameBottomLeft>
       <AppFrameBottomRight>
+        <LanguageSwitcher />
         <ToggleDarkMode />
       </AppFrameBottomRight>
     </AppFrameBottomFragment>
