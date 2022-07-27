@@ -70,13 +70,13 @@ export const SidebarMenuItemTitle = styled.div`
 export const SidebarMenuItem = (
   props: React.HTMLAttributes<HTMLDivElement> & {
     icon?: React.ReactNode;
-    title?: string;
+    titleContent?: React.ReactNode;
   }
 ) => {
   return (
     <SidebarMenuItemFragment {...props}>
       <SidebarMenuItemIcon>{props.icon}</SidebarMenuItemIcon>
-      <SidebarMenuItemTitle>{props.title}</SidebarMenuItemTitle>
+      <SidebarMenuItemTitle>{props.titleContent}</SidebarMenuItemTitle>
     </SidebarMenuItemFragment>
   );
 };

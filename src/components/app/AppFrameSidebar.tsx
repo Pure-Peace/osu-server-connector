@@ -24,7 +24,7 @@ export const AppFrameSidebar = () => {
         {routes.map((route, index) => (
           <SidebarMenuItem
             key={index}
-            title={route.name}
+            titleContent={route.name}
             icon={route.icon}
             onClick={() => navigate(route.path)}
             className={cc({
