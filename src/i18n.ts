@@ -14,7 +14,7 @@ i18n
   .use(initReactI18next)
   .init({
     backend: {
-      loadPath: '../../locales/{{lng}}.yml',
+      loadPath: '/locales/{{lng}}.yml',
       parse: (data: string) =>
         yaml.load(data) as { [key: string]: string | undefined },
     },
