@@ -7,7 +7,7 @@ import { open } from '@tauri-apps/api/shell';
 import { invoke } from '@tauri-apps/api/tauri';
 import CustomButton from '../components/CustomButton';
 
-export default function ExampleView() {
+const Config = () => {
   const { t } = useTranslation();
 
   // fs example
@@ -28,4 +28,6 @@ export default function ExampleView() {
   }
 
   return <CustomButton onClick={createFile}>Do something with fs</CustomButton>;
-}
+};
+
+export default Config;

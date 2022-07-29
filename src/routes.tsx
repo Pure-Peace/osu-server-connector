@@ -1,15 +1,19 @@
 import Home from './views/Home';
-import ExampleView from './views/ExampleView';
+import Config from './views/Config';
+import Server from './views/Server';
 
 import HomeIcon from './components/icons/Home';
+import ServerIcon from './components/icons/Server';
 import Code from './components/icons/Code';
 
 const routes = [
   { component: Home, path: '/', name: 'Home', icon: <HomeIcon /> },
+  { component: Server, path: '/Server', name: 'Server', icon: <ServerIcon /> },
+
   {
-    component: ExampleView,
-    path: '/ExampleView',
-    name: 'ExampleView',
+    component: Config,
+    path: '/Config',
+    name: 'Config',
     icon: <Code />,
   },
 ];
