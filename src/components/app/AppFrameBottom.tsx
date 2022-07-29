@@ -29,18 +29,34 @@ export const AppFrameBottomRight = styled.div`
   }
 `;
 
-export const AppBottomCopyright = styled.div`
+export const AppBottomCopyright = styled.a`
   display: flex;
   align-items: center;
   font-weight: 700;
   font-size: 14px;
+  transition: all 0.2s ease;
+  opacity: 0.8;
+
+  :hover {
+    opacity: 1;
+  }
+
+  > svg {
+    margin-right: 5px;
+    font-size: 16px;
+  }
 `;
 
 export const AppFrameBottom = () => {
   return (
     <AppFrameBottomFragment id="app-frame-bottom">
       <AppFrameBottomLeft>
-        <AppBottomCopyright>Copyright 2022 Pure-Peace</AppBottomCopyright>
+        <AppBottomCopyright
+          href="https://github.com/pure-peace/osu-server-connector"
+          target="_blank"
+        >
+          <Github /> Copyright 2022 Pure-Peace
+        </AppBottomCopyright>
       </AppFrameBottomLeft>
       <AppFrameBottomRight>
         <LanguageSwitcher />

@@ -19,6 +19,13 @@ div {
   transition: background-color 0.2s ease;
 }
 
+a,
+a:hover,
+a:active,
+a:visited {
+  color: inherit;
+}
+
 body {
   overflow: hidden;
   box-shadow: 0 0 var(--shadow-size) #00000031;

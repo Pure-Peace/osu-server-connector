@@ -2,6 +2,7 @@
   "name": "osu-server-connector",
   "version": "0.1.0",
   "private": true,
+  "repository": "https://github.com/pure-peace/osu-server-connector",
   "scripts": {
     "dev": "tauri dev",
     "start": "vite",
