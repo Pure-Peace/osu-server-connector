@@ -17,3 +17,11 @@ export const cc = (names: string | number | string[] | Record<string, any>) => {
 
   return out;
 };
+
+export const rewriteOptions = <T>(
+  defaultOption: T,
+  options?: {
+    [Property in keyof T]?: T[keyof T];
+  }
+) =>
+  options ? Object.assign({ ...defaultOption }, options) : { ...defaultOption };

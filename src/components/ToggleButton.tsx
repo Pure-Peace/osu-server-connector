@@ -2,6 +2,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { rewriteOptions } from '../utils/common';
+
 export type PropsToggleButtonBody = {
   activeIncrease: number;
   circleRadius: number;
@@ -88,7 +90,7 @@ export const ToggleButton = (
   const px = (val: string | number) => `${val}px`;
   const s = (on?: string, off?: string) => (props.state ? on : off);
 
-  const t = Object.assign({ ...DEFAULT_THEME }, props.theme);
+  const t = rewriteOptions(DEFAULT_THEME, props.theme);
   const circleRadius = t.minHeight - t.borderSize * 2;
 
   return (
