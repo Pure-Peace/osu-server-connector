@@ -1,15 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import CustomButton, { CustomButtonWithTheme } from './CustomButton';
+import { CustomButtonWithTheme } from './CustomButton';
 
 export const CardFragment = styled.div`
   width: 340px;
   height: 410px;
-  border: 3px solid #fff;
+  border: 3px solid var(--frame-bg-color);
   border-radius: 30px;
   padding: 10px;
   display: flex;
   align-items: stretch;
+  transition: all 0.2s ease;
 `;
 
 export const CardBody = styled.div`
@@ -23,7 +24,7 @@ export const CardBody = styled.div`
 export const CardContent = styled.div``;
 
 export const CardAction = styled.div`
-  background-color: #fff;
+  background-color: var(--frame-bg-color);
   border-radius: 10px 10px 30px 30px;
   padding: 10px;
   display: flex;

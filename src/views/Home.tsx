@@ -12,14 +12,16 @@ const Home = () => {
       <Card
         action={
           <>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
+            <div
+              style={{ display: 'flex', alignItems: 'center', padding: '10px' }}
+            >
               {t('Hello')}
             </div>
             <CardActionButton>Action</CardActionButton>
           </>
         }
       >
-        <div style={{ height: '330px' }}>d</div>
+        <div style={{ height: '310px', padding: '15px' }}>Grakjgl;skd</div>
       </Card>
     </div>
   );
