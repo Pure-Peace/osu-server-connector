@@ -11,19 +11,21 @@ export const AppContentFragment = styled.div`
   padding: 20px 5px 5px 20px;
 `;
 
-export const AppContentContainer = styled.div``;
+export const AppContentContainer = styled(OverlayScrollbarsComponent)`
+  flex: 1;
+  display: flex;
+  width: calc(100% - 25px);
+`;
 
 export const AppContent = () => {
   return (
     <AppContentFragment id="app-content">
-      <OverlayScrollbarsComponent
+      <AppContentContainer
         options={{ scrollbars: { autoHide: 'leave' } }}
         className="flexbox"
       >
-        <AppContentContainer className="flexbox">
-          <AppRouter />
-        </AppContentContainer>
-      </OverlayScrollbarsComponent>
+        <AppRouter />
+      </AppContentContainer>
     </AppContentFragment>
   );
 };

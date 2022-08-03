@@ -15,9 +15,9 @@ const Home = () => {
             <div
               style={{ display: 'flex', alignItems: 'center', padding: '10px' }}
             >
-              {t('Hello')}
+              Pure-Peace
             </div>
-            <CardActionButton>Action</CardActionButton>
+            <CardActionButton>Launch</CardActionButton>
           </>
         }
       >
