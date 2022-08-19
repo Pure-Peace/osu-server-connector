@@ -8,7 +8,7 @@ export const AppContentFragment = styled.div`
   background-color: var(--content-bg-color);
   border-radius: 30px 0 0 30px;
   overflow: hidden;
-  padding: 20px 5px 5px 20px;
+  padding: 5px;
 `;
 
 export const AppContentContainer = styled(OverlayScrollbarsComponent)`
@@ -22,7 +22,7 @@ export const AppContent = () => {
     <AppContentFragment id="app-content">
       <AppContentContainer
         options={{ scrollbars: { autoHide: 'leave' } }}
-        className="flexbox"
+        className="flexbox app-container"
       >
         <AppRouter />
       </AppContentContainer>

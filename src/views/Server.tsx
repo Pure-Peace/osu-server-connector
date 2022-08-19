@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
 
-import ServerList from '../components/ServerList';
+import ServerList, { ServerProps } from '../components/ServerList';
 
 import { AppContext } from '../contexts/appContext';
 
@@ -12,9 +12,37 @@ const Server = () => {
     i18n: { t },
   } = useContext(AppContext);
 
+  const serverList: ServerProps[] = [
+    {
+      cover: undefined,
+      title: 'ppy.sb',
+      content: 'sb服',
+    },
+    {
+      cover: undefined,
+      title: 'ppy.sb',
+      content: 'sb服',
+    },
+    {
+      cover: undefined,
+      title: 'ppy.sb',
+      content: 'sb服',
+    },
+    {
+      cover: undefined,
+      title: 'ppy.sb',
+      content: 'sb服',
+    },
+    {
+      cover: undefined,
+      title: 'ppy.sb',
+      content: 'sb服',
+    },
+  ];
+
   return (
     <ServerFragment>
-      <ServerList />
+      <ServerList servers={serverList} />
     </ServerFragment>
   );
 };

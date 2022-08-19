@@ -3,21 +3,23 @@ import styled from 'styled-components';
 import ServerIcon from '../components/icons/Server';
 
 import DefaultImage from './DefaultImage';
+import { ServerProps } from './ServerList';
 
 const ServerItemFragment = styled.div`
   background-color: var(--frame-bg-color);
   border-radius: 20px;
-  width: 300px;
   height: 100px;
-  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: none;
   transition: all 0.2s ease;
   display: flex;
   align-items: stretch;
   padding: 15px;
   overflow: hidden;
+  cursor: pointer;
 
   :hover {
-    box-shadow: none;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
   }
 `;
 
@@ -67,19 +69,20 @@ const DefaultServerIcon = styled(ServerIcon)`
   opacity: 0.9;
 `;
 
-const ServerItem = (props: { cover?: string }) => {
+const ServerItem = (props: { server: ServerProps }) => {
+  const { server } = props;
   return (
     <ServerItemFragment>
       <ServerItemCover>
-        {props.cover ? (
-          <ServerItemCoverImg src={props.cover} />
+        {server.cover ? (
+          <ServerItemCoverImg src={server.cover} />
         ) : (
           <DefaultServerIcon />
         )}
       </ServerItemCover>
       <ServerItemBody>
-        <ServerItemTitle>ppy.sb</ServerItemTitle>
-        <ServerItemContent>这是sb服</ServerItemContent>
+        <ServerItemTitle>{server.title}</ServerItemTitle>
+        <ServerItemContent>{server.content}</ServerItemContent>
         <ServerItemAction>
           <ServerIcon />
         </ServerItemAction>
